@@ -9,6 +9,10 @@ at this project. But I do enjoy the occasional venture outside my
 wheelhouse--partly for the fun of it and partly as a check-in on what's changed
 in the intervening years and what's still the same.
 
+The goal/hope is to maintain two designs: a pure HTML+CSS version built with
+Eleventy and a ridiculously overengineered one that'll give me a chance to
+experiment with Next.js.
+
 The older versions of my web résumé have been mostly lost to time, but roughly:
 
 - v1.0 - Some HTML handwritten in Microsoft Notepad (lol)
@@ -30,7 +34,10 @@ some additions:
 
 - A top-level `project_info` section to store the project URL and language
 - A `pronouns` field in the basics section
-- Location information for items in the education section
+- Location information for work experience items
+- Location information for education items
+- Optionally allowing a location section to be a string instead of hash for
+  cases where there is no locality/region/country (i.e. remote work)
 
 ## Credits
 

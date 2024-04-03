@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="{{ config.project_info.lang }}"
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Résumé for {{ config.basics.name }}</title>
+</head>
+
+<body>
+  <div id="resume" class="h-resume">
+    <div id="basics_intro" class="p-contact h-card">
+      <h1>
+        <span class="p-name">{{ config.basics.name }}</span>
+        |
+        <!-- The h-card microformat doesn't have a property for pronouns -->
+        <span class="p-note">{{ config.basics.pronouns }}</span>
+        |
+        <span class="p-locality">{{ config.basics.location.city }}</span>,
+        <span class="p-region">{{ config.basics.location.region }}</span>,
+        <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
+      </h1>
+    </div>
+
+    <div id="basics_contacts">
+      {% for entry in config.basics.profiles %}
+        <span><a class="p-contact h-card" href="{{ entry.url }}">{{ entry.network }}: {{ entry.username }}</a></span>
+      {% endfor %}
+    </div>
+  
+    <h2>Summary</h2>
+    <div id="summary">
+      <p class="p-summary">{{ config.basics.summary }}</p>
+    </div>
+
+    <h2>Professional Experience</h2>
+    <div id="jobs">
+      {% for entry in config.work %}
+        <div class="p-experience h-event">
+          <div>
+            <h4>
+              <span class="p-name">{{ entry.name }}</span>
+              <span class="p-location h-card">
+                {%  if entry.location | isstring %}
+                <span class="p-location">{{ entry.location }}</span>
+                {% else %}
+                <span class="p-location h-card">
+                  <span class="p-locality">{{ entry.location.locality }}</span>,
+                  <span class="p-region">{{ entry.location.region }}</span>,
+                  <span class="p-country-name">{{ entry.location.countryCode }}</span>
+                </span>
+                {% endif %}
+              </span>
+              <span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
+            </h4>
+          </div>
+          <div class="p-summary">{{ entry.position }}</div>
+          <div class="p-description">
+            <ul>
+              {% for highlight in entry.highlights %}
+                <li>{{ highlight }}</li>
+              {% endfor %}
+            </ul>
+          <div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <h2>Hobbyist Experience</h2>
+    <div id="hobbies">
+      <ul>
+        {% for entry in config.interests %}
+          <li class="p-skill">{{ entry.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <h2>Educational Experience</h2>
+    <div id="education">
+      {% for entry in config.education %}
+        <div class="p-education h-event">
+          <div>
+            <h4>
+              <span class="p-name">{{ entry.institution }}</span>
+              <span class="p-location h-card">
+                <span class="p-locality">{{ entry.location.locality }}</span>,
+                <span class="p-region">{{ entry.location.region }}</span>,
+                <span class="p-country-name">{{ entry.location.countryCode}}</span>
+              </span>
+              <span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
+            </div>
+          </h4>
+          <div class="p-summary">
+            Coursework in: {{ entry.courses | join(", ") | capitalize }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

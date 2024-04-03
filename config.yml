@@ -31,6 +31,7 @@ basics:
 
 work:
   - name: Texas Mining Company
+    location: Remote
     position: Principal Engineer
     startDate: 2021
     endDate: 2023
@@ -40,6 +41,10 @@ work:
         startup using Terraform, Packer, EC2, Lambda, Docker, Prometheus,
         Grafana Cloud, PagerDuty, and custom Python glue
   - name: Tyler Technologies (formerly Socrata; acquired 2018)
+    location:
+      locality: Seattle
+      region: WA
+      countryCode: US
     position: Senior Site Reliability Engineer
     startDate: 2015
     endDate: 2019
@@ -59,6 +64,10 @@ work:
         Hashicorp Packer to enable rapid, continuous deployment of new
         golden images
   - name: Rackspace (formerly Webmail.us; acquired 2007)
+    location:
+      locality: Blacksburg
+      region: VA
+      countryCode: US
     position: Technical Lead, Mail Routing
     startDate: 2012
     endDate: 2014
@@ -69,6 +78,10 @@ work:
         Served as ultimate escalation point for issues with mail routing
         and anti-spam infrastructure
   - name: Rackspace (formerly Webmail.us; acquired 2007)
+    location:
+      locality: Blacksburg
+      region: VA
+      countryCode: US
     position: Linux Systems Engineer III
     startDate: 2011
     endDate: 2012
@@ -77,6 +90,10 @@ work:
         Helped deploy a config management system (Chef) to automate setup
         of bare metal servers
   - name: Rackspace (formerly Webmail.us; acquired 2007)
+    location:
+      locality: Blacksburg
+      region: VA
+      countryCode: US
     position: Anti-Abuse Engineer
     startDate: 2009
     endDate: 2011
@@ -84,7 +101,11 @@ work:
       - >
         Evaluated, integrated, and maintained email anti-spam solutions
   - name: Rackspace (formerly Webmail.us; acquired 2007)
-    title: Engineering Team Lead
+    location:
+      locality: Blacksburg
+      region: VA
+      countryCode: US
+    position: Engineering Team Lead
     startDate: 2007
     endDate: 2009
     highlights:
@@ -95,7 +116,11 @@ work:
       - >
         Oversaw growth of operations from one engineer to seven
   - name: Rackspace (formerly Webmail.us; acquired 2007)
-    title: Customer Support Engineer
+    location:
+      locality: Blacksburg
+      region: VA
+      countryCode: US
+    position: Customer Support Engineer
     startDate: 2005
     endDate: 2007
     highlights:
@@ -115,7 +140,7 @@ interests:
 education:
   - institution: George Mason University
     location:
-      city: Fairfax
+      locality: Fairfax
       region: VA
       countryCode: US
     startDate: 2001
@@ -126,11 +151,11 @@ education:
       - women and gender studies
   - institution: Hampshire College
     location:
-      city: Amherst
+      locality: Amherst
       region: MA
       countryCode: US
-    from: 2000
-    to: 2001
-    curriculum:
+    startDate: 2000
+    endDate: 2001
+    courses:
       - computer science
       - political science
