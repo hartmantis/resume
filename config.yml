@@ -35,7 +35,7 @@ work:
     position: Principal Engineer
     startDate: 2021
     endDate: 2023
-    higlights:
+    highlights:
       -  >
         Built a self-healing compute cluster in AWS for an early-stage
         startup using Terraform, Packer, EC2, Lambda, Docker, Prometheus,
