@@ -22,9 +22,9 @@
     </div>
 
     <div id="basics_contacts">
-      {% for entry in config.basics.profiles %}
+      {%- for entry in config.basics.profiles %}
         <span><a class="p-contact h-card" href="{{ entry.url }}">{{ entry.network }}: {{ entry.username }}</a></span>
-      {% endfor %}
+      {%- endfor %}
     </div>
   
     <h2>Summary</h2>
@@ -34,7 +34,7 @@
 
     <h2>Professional Experience</h2>
     <div id="jobs">
-      {% for entry in config.work %}
+      {%- for entry in config.work %}
         <div class="p-experience h-event">
           <div>
             <h4>
@@ -56,21 +56,21 @@
           <div class="p-summary">{{ entry.position }}</div>
           <div class="p-description">
             <ul>
-              {% for highlight in entry.highlights %}
+              {%- for highlight in entry.highlights %}
                 <li>{{ highlight }}</li>
-              {% endfor %}
+              {%- endfor %}
             </ul>
           <div>
         </div>
-      {% endfor %}
+      {%- endfor %}
     </div>
 
     <h2>Hobbyist Experience</h2>
     <div id="hobbies">
       <ul>
-        {% for entry in config.interests %}
+        {%- for entry in config.interests %}
           <li class="p-skill">{{ entry.name }}</li>
-        {% endfor %}
+        {%- endfor %}
       </ul>
     </div>
 
