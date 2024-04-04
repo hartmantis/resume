@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Résumé for {{ config.basics.name }}</title>
+  <style>
+    {% set css %}
+    {% include "styles/tailwind.css" %}
+    {% endset %}
+    {{ css | postCss | safe }}
+  </style>
 </head>
 
 <body>

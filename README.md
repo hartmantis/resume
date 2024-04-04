@@ -39,6 +39,15 @@ some additions:
 - Optionally allowing a location section to be a string instead of hash for
   cases where there is no locality/region/country (i.e. remote work)
 
+***Content***
+
+The Eleventy version of this project uses Nunjucks as its templating language.
+
+***Styling***
+
+We use TailwindCSS for styling. This is a simple site that could use either
+that or Bootstrap, but I've used Bootstrap before so am trying something new.
+
 ## Credits
 
 Like with any good dev project, lots of the code here is based on work done by
@@ -46,3 +55,6 @@ others before me. Shout-outs to some of the most notable sources:
 
 - David Reed's [The Overengineered Resume](https://ktema.org/articles/the-overengineered-resume)
 - Colin Hemphill's [nextjs-resume project](https://github.com/colinhemphill/nextjs-resume)
+- Daniel Zenzes's [tutorial](https://zenzes.me/eleventy-integrate-postcss-and-tailwind-css/)
+  on integrating TailwindCSS with an Eleventy project as an Eleventy filter
+  instead of an additional build step in NPM
