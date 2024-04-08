@@ -133,8 +133,8 @@ interests:
   - name: >
       Learning enough NixOS/Nix, ZFS, and Traefik to build a new home NAS on them
   - name: >
-      Overengineering this résumé as a static site for fun and some front-end
-      experience
+      Creating increasingly overengineered web versions of this résumé for fun
+      and front-end experience
   - name: >
       Live streaming with a focus on virtual music performance
 education:
