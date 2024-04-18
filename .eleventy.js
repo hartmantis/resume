@@ -24,8 +24,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addGlobalData("config", yaml.load(fs.readFileSync("config.yml", "utf-8")));
 
-  eleventyConfig.addWatchTarget('./src/_includes/styles/');
-  eleventyConfig.addNunjucksAsyncFilter('postCss', postCssFilter);
+  eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*" : "/" });
+
+  eleventyConfig.addWatchTarget("src/_includes/styles/");
+  eleventyConfig.addNunjucksAsyncFilter("postCss", postCssFilter);
 
   return {
     dir: {
