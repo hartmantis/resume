@@ -22,7 +22,25 @@ module.exports = function(eleventyConfig) {
     return typeof obj === "string";
   });
 
-  eleventyConfig.addGlobalData("config", yaml.load(fs.readFileSync("config/config.yml", "utf-8")));
+  let conf = yaml.load(fs.readFileSync("config/config.yml", "utf-8"));
+
+  let iconmap = new Map();
+  iconmap.set("github", "brands/github.svg");
+  iconmap.set("linkedin", "brands/linkedin.svg");
+  iconmap.set("mastodon", "brands/mastodon.svg");
+  iconmap.set("bluesky", "brands/bluesky.svg");
+  iconmap.set("email", "solid/envelope.svg");
+  iconmap.set("phone", "solid/phone.svg");
+
+  for ( profile of conf.basics.profiles ) {
+    let lwr = profile.network.toLowerCase();
+    let srcPath = `node_modules/@fortawesome/fontawesome-free/svgs/${iconmap.get(lwr)}`;
+    let destPath = `/assets/icons/${lwr}.svg`
+    eleventyConfig.addPassthroughCopy({ [`${srcPath}`]: destPath })
+    profile.icon = destPath;
+  }
+
+  eleventyConfig.addGlobalData("config", conf);
 
   eleventyConfig.addPassthroughCopy({ "config/favicons/*" : "/" });
 
