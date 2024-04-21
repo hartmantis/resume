@@ -37,7 +37,10 @@
 
     <div id="basics_contacts" class="flex flex-row flex-wrap">
       {%- for entry in config.basics.profiles %}
-        <div class="flex-none bg-purple-500 w-1/4 min-w-80"><a class="p-contact h-card" href="{{ entry.url }}">{{ entry.network }}: {{ entry.username }}</a></div>
+        <div class="flex-none bg-purple-500 w-1/4 min-w-80">
+          <img src="{{ entry.icon }}" class="inline w-5 h-5" />
+          <a class="p-contact h-card" href="{{ entry.url }}">{{ entry.username }}</a>
+        </div>
       {%- endfor %}
     </div>
   
