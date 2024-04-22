@@ -15,14 +15,15 @@
   <style>
     {% set css %}
     {% include "styles/tailwind.css" %}
+    {% include "../node_modules/@fortawesome/fontawesome-svg-core/styles.css" %}
     {% endset %}
     {{ css | postCss | safe }}
   </style>
 </head>
 
 <body>
-  <div id="resume" class="bg-white dark:bg-slate-800 h-resume">
-    <div id="basics_intro" class="p-contact h-card">
+  <div id="resume" class="h-resume">
+    <div id="basics_intro" class="p-contact h-card bg-white dark:bg-slate-800 ">
       <h1>
         <span class="p-name">{{ config.basics.name }}</span>
         |
@@ -38,7 +39,7 @@
     <div id="basics_contacts" class="flex flex-row flex-wrap">
       {%- for entry in config.basics.profiles %}
         <div class="flex-none bg-purple-500 w-1/4 min-w-80">
-          <img src="{{ entry.icon }}" class="inline w-5 h-5" />
+          {{ entry.icon | safe }}
           <a class="p-contact h-card" href="{{ entry.url }}">{{ entry.username }}</a>
         </div>
       {%- endfor %}

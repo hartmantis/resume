@@ -1,9 +1,15 @@
-const tailwind = require("tailwindcss");
-const postCss = require("postcss");
 const autoPrefixer = require("autoprefixer");
 const cssNano = require("cssnano");
-const yaml = require("js-yaml");
+const faSvgCore = require("@fortawesome/fontawesome-svg-core");
+const fas =  require("@fortawesome/free-solid-svg-icons");
+const far = require("@fortawesome/free-regular-svg-icons");
+const fab = require("@fortawesome/free-brands-svg-icons");
 const fs = require("fs");
+const postCss = require("postcss");
+const tailwind = require("tailwindcss");
+const yaml = require("js-yaml");
+
+faSvgCore.library.add(fas.fas, far.far, fab.fab);
 
 const postCssFilter = (code, done) => {
   postCss([
@@ -25,19 +31,17 @@ module.exports = function(eleventyConfig) {
   let conf = yaml.load(fs.readFileSync("config/config.yml", "utf-8"));
 
   let iconmap = new Map();
-  iconmap.set("github", "brands/github.svg");
-  iconmap.set("linkedin", "brands/linkedin.svg");
-  iconmap.set("mastodon", "brands/mastodon.svg");
-  iconmap.set("bluesky", "brands/bluesky.svg");
-  iconmap.set("email", "solid/envelope.svg");
-  iconmap.set("phone", "solid/phone.svg");
+  iconmap.set("github", faSvgCore.findIconDefinition({ prefix: "fab", iconName: "github" }));
+  iconmap.set("linkedin", faSvgCore.findIconDefinition({ prefix: "fab", iconName: "linkedin" }));
+  iconmap.set("mastodon", faSvgCore.findIconDefinition({ prefix: "fab", iconName: "mastodon" }));
+  iconmap.set("bluesky", faSvgCore.findIconDefinition({ prefix: "fab", iconName: "bluesky" }));
+  iconmap.set("email", faSvgCore.findIconDefinition({ prefix: "fas", iconName: "envelope" }));
+  iconmap.set("phone", faSvgCore.findIconDefinition({ prefix: "fas", iconName: "phone" }));
 
   for ( profile of conf.basics.profiles ) {
     let lwr = profile.network.toLowerCase();
-    let srcPath = `node_modules/@fortawesome/fontawesome-free/svgs/${iconmap.get(lwr)}`;
-    let destPath = `/assets/icons/${lwr}.svg`
-    eleventyConfig.addPassthroughCopy({ [`${srcPath}`]: destPath })
-    profile.icon = destPath;
+    let icon = iconmap.get(lwr);
+    profile.icon = faSvgCore.icon(icon, { transform: { size: 22 } }).html;
   }
 
   eleventyConfig.addGlobalData("config", conf);
