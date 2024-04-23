@@ -38,6 +38,11 @@ module.exports = function(eleventyConfig) {
   iconmap.set("email", faSvgCore.findIconDefinition({ prefix: "fas", iconName: "envelope" }));
   iconmap.set("phone", faSvgCore.findIconDefinition({ prefix: "fas", iconName: "phone" }));
 
+  conf.basics.profiles.unshift({
+    network: "email",
+    username: conf.basics.email
+  });
+
   for ( profile of conf.basics.profiles ) {
     let lwr = profile.network.toLowerCase();
     let icon = iconmap.get(lwr);
