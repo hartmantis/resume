@@ -46,7 +46,13 @@ module.exports = function(eleventyConfig) {
   for ( profile of conf.basics.profiles ) {
     let lwr = profile.network.toLowerCase();
     let icon = iconmap.get(lwr);
-    profile.icon = faSvgCore.icon(icon, { transform: { size: 22 } }).html;
+    profile.icon = faSvgCore.icon(
+      icon,
+      {
+        title: `My ${profile.network} Contact Info`,
+        transform: { size: 22 }
+      }
+    ).html;
   }
 
   eleventyConfig.addGlobalData("config", conf);

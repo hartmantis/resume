@@ -11,12 +11,12 @@ basics:
     region: WA
     countryCode: US
   profiles:
-    - network: GitHub
-      username: hartmantis
-      url: https://github.com/hartmantis
     - network: LinkedIn
       username: hartmantis
       url: https://www.linkedin.com/in/hartmantis/
+    - network: GitHub
+      username: hartmantis
+      url: https://github.com/hartmantis
     - network: Mastodon
       username: "@cheese@hachyderm.io"
       url: https://hachyderm.io/@cheese
