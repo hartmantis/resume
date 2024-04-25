@@ -22,23 +22,22 @@
 </head>
 
 <body>
-  <div id="resume" class="h-resume">
-    <div id="basics_intro" class="p-contact h-card bg-white dark:bg-slate-800 ">
+  <div id="resume" class="h-resume bg-white dark:bg-slate-800">
+    <div id="basics_intro" class="p-contact h-card">
       <h1>
         <span class="p-name">{{ config.basics.name }}</span>
         |
         <!-- The h-card microformat doesn't have a property for pronouns -->
         <span class="p-note">{{ config.basics.pronouns }}</span>
-        |
         <span class="p-locality">{{ config.basics.location.city }}</span>,
         <span class="p-region">{{ config.basics.location.region }}</span>,
         <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
       </h1>
     </div>
 
-    <div id="basics_contacts" class="flex flex-row flex-wrap">
+    <div id="basics_contacts" class="flex flex-wrap gap-2 items-center justify-center">
       {%- for entry in config.basics.profiles %}
-        <div class="flex-none bg-purple-500 w-1/{{ config.basics.profiles.length }} min-w-60">
+        <div class="flex-none rounded-md px-3 bg-purple-500 hover:bg-sky-700 w-1/{{ config.basics.profiles.length }}">
           {{ entry.icon | safe }}
           <a class="p-contact h-card" href="{{ entry.url }}">{{ entry.username }}</a>
         </div>
