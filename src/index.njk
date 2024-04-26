@@ -37,7 +37,7 @@
 
     <div id="basics_contacts" class="flex flex-wrap gap-2 items-center justify-center">
       {%- for entry in config.basics.profiles %}
-        <div class="flex-none rounded-md px-3 bg-purple-500 hover:bg-sky-700 w-1/{{ config.basics.profiles.length }}">
+        <div class="flex-none w-60 rounded-md px-3 text-center bg-purple-500 hover:bg-sky-700">
           {{ entry.icon | safe }}
           <a class="p-contact h-card" href="{{ entry.url }}">{{ entry.username }}</a>
         </div>
