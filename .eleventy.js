@@ -40,7 +40,8 @@ module.exports = function(eleventyConfig) {
 
   conf.basics.profiles.unshift({
     network: "email",
-    username: conf.basics.email
+    username: conf.basics.email,
+    url: `mailto:${conf.basics.email}`
   });
 
   for ( profile of conf.basics.profiles ) {

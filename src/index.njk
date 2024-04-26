@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <div id="resume" class="h-resume bg-white dark:bg-slate-800">
+  <div id="resume" class="h-resume bg-white text-black dark:bg-slate-800 dark:text-gray-400">
     <div id="basics_intro" class="p-contact h-card">
       <h1>
         <span class="p-name">{{ config.basics.name }}</span>
@@ -37,7 +37,7 @@
 
     <div id="basics_contacts" class="flex flex-wrap gap-2 items-center justify-center">
       {%- for entry in config.basics.profiles %}
-        <div class="flex-none w-60 rounded-md px-3 text-center bg-purple-500 hover:bg-sky-700">
+        <div class="flex-none w-60 rounded-md px-3 text-black text-center bg-purple-500 hover:bg-sky-700">
           {{ entry.icon | safe }}
           <a class="p-contact h-card" href="{{ entry.url }}">{{ entry.username }}</a>
         </div>
