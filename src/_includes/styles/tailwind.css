@@ -10,3 +10,12 @@
     @apply text-xl;
   }
 }
+
+@layer components {
+  .rsection {
+    @apply flex;
+    @apply rounded-md;
+    @apply bg-slate-700;
+    @apply m-4;
+  }
+}

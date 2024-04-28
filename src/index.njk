@@ -23,34 +23,37 @@
 
 <body>
   <div id="resume" class="h-resume bg-white text-black dark:bg-slate-800 dark:text-gray-400">
-    <div id="basics_intro" class="p-contact h-card">
-      <h1>
-        <span class="p-name">{{ config.basics.name }}</span>
-        |
-        <!-- The h-card microformat doesn't have a property for pronouns -->
-        <span class="p-note">{{ config.basics.pronouns }}</span>
-        <span class="p-locality">{{ config.basics.location.city }}</span>,
-        <span class="p-region">{{ config.basics.location.region }}</span>,
-        <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
-      </h1>
-    </div>
+    <div id="header" class="sticky top-0 w-full backdrop-blur">
+      <div id="basics_intro" class="p-contact h-card">
+        <h1>
+          <span class="p-name">{{ config.basics.name }}</span>
+          |
+          <!-- The h-card microformat doesn't have a property for pronouns -->
+          <span class="p-note">{{ config.basics.pronouns }}</span>
+          |
+          <span class="p-locality">{{ config.basics.location.city }}</span>,
+          <span class="p-region">{{ config.basics.location.region }}</span>,
+          <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
+        </h1>
+      </div>
 
-    <div id="basics_contacts" class="flex flex-wrap gap-2 items-center justify-center">
-      {%- for entry in config.basics.profiles %}
-        <div class="flex-none w-60 rounded-md px-3 text-black text-center bg-purple-500 hover:bg-sky-700">
-          {{ entry.icon | safe }}
-          <a class="p-contact h-card" href="{{ entry.url }}">{{ entry.username }}</a>
-        </div>
-      {%- endfor %}
+      <div id="basics_contacts" class="flex flex-wrap p-2 gap-2 items-center justify-center">
+        {%- for entry in config.basics.profiles %}
+          <div class="flex-none w-60 rounded-md px-3 text-black text-center bg-purple-500 hover:bg-sky-700">
+            {{ entry.icon | safe }}
+            <a class="p-contact h-card" href="{{ entry.url }}">{{ entry.username }}</a>
+          </div>
+        {%- endfor %}
+      </div>
     </div>
   
-    <h2>Summary</h2>
-    <div id="summary">
+    <div id="summary" class="rsection">
+      <h2>Summary</h2>
       <p class="p-summary">{{ config.basics.summary }}</p>
     </div>
 
-    <h2>Professional Experience</h2>
-    <div id="jobs">
+    <div id="jobs" class="rsection">
+      <h2>Professional Experience</h2>
       {%- for entry in config.work %}
         <div class="p-experience h-event">
           <div>
@@ -77,13 +80,13 @@
                 <li>{{ highlight }}</li>
               {%- endfor %}
             </ul>
-          <div>
+          </div>
         </div>
       {%- endfor %}
     </div>
 
-    <h2>Hobbyist Experience</h2>
-    <div id="hobbies">
+    <div id="hobbies" class="rsection">
+      <h2>Hobbyist Experience</h2>
       <ul>
         {%- for entry in config.interests %}
           <li class="p-skill">{{ entry.name }}</li>
@@ -91,8 +94,8 @@
       </ul>
     </div>
 
-    <h2>Educational Experience</h2>
-    <div id="education">
+    <div id="education" class="rsection">
+      <h2>Educational Experience</h2>
       {% for entry in config.education %}
         <div class="p-education h-event">
           <div>
