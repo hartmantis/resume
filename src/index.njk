@@ -21,8 +21,8 @@
   </style>
 </head>
 
-<body>
-  <div id="resume" class="h-resume bg-white text-black dark:bg-slate-800 dark:text-gray-400">
+<body class="bg-white text-black dark:bg-slate-800 dark:text-gray-400">
+  <div id="resume" class="h-resume">
     <div id="header" class="sticky top-0 w-full backdrop-blur">
       <div id="basics_intro" class="p-contact h-card">
         <h1>
@@ -48,8 +48,12 @@
     </div>
   
     <div id="summary" class="rsection">
-      <h2>Summary</h2>
-      <p class="p-summary">{{ config.basics.summary }}</p>
+      <div class="rsection-header">
+        <h2>Summary</h2>
+      </div>
+      <div class="rsection-content">
+        <p class="p-summary">{{ config.basics.summary }}</p>
+      </div>
     </div>
 
     <div id="jobs" class="rsection">
