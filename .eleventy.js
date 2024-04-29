@@ -28,6 +28,7 @@ module.exports = function(eleventyConfig) {
     return typeof obj === "string";
   });
 
+  
   let conf = yaml.load(fs.readFileSync("config/config.yml", "utf-8"));
 
   let iconmap = new Map();
@@ -55,7 +56,7 @@ module.exports = function(eleventyConfig) {
       }
     ).html;
   }
-
+  
   eleventyConfig.addGlobalData("config", conf);
 
   eleventyConfig.addPassthroughCopy({ "config/favicons/*" : "/" });

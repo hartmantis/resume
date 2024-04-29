@@ -24,6 +24,8 @@
     @apply w-full;
     @apply md:w-28;
     @apply flex-none;
+    @apply text-left;
+    @apply md:text-right;
   }
 
   .rsection-content {

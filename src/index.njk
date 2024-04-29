@@ -24,7 +24,7 @@
 <body class="bg-white text-slate-500 dark:bg-slate-900 dark:text-slate-400">
   <div id="resume" class="h-resume">
     <div id="header" class="sticky top-0 w-full backdrop-blur">
-      <div id="basics_intro" class="p-contact h-card">
+      <div id="basics-intro" class="p-contact h-card p-2">
         <h1>
           <span class="p-name">{{ config.basics.name }}</span>
           |
@@ -37,7 +37,7 @@
         </h1>
       </div>
 
-      <div id="basics_contacts" class="flex flex-wrap p-2 gap-2 items-center justify-center">
+      <div id="basics-contacts" class="flex flex-wrap p-2 gap-2 items-center justify-center">
         {%- for entry in config.basics.profiles %}
           <div class="flex-none w-60 rounded-md px-3 text-black text-center bg-purple-500 hover:bg-sky-700">
             {{ entry.icon | safe }}
@@ -61,35 +61,51 @@
         <h2>Professional Experience</h2>
       </div>
       <div class="rsection-content">
-        {%- for entry in config.work %}
-          <div class="p-experience h-event">
-            <div>
-              <h4>
-                <span class="p-name">{{ entry.name }}</span>
-                <span class="p-location h-card">
-                  {%  if entry.location | isstring %}
-                  <span class="p-location">{{ entry.location }}</span>
-                  {% else %}
-                  <span class="p-location h-card">
-                    <span class="p-locality">{{ entry.location.locality }}</span>,
-                    <span class="p-region">{{ entry.location.region }}</span>,
-                    <span class="p-country-name">{{ entry.location.countryCode }}</span>
+        {% for org, jobs in config.work | groupby("name") %}
+          {% set first = jobs | first %}
+          {% set last = jobs | last %}
+
+          <h4 class="text-sky-400">
+            <div class="flex flex-wrap md:flex-nowrap">
+              <div class="w-full md:w-3/6">{{ first.name }}</div>
+              <div class="w-full md:w-2/6">
+                {% if first.location | isstring %}
+                  {{ first.location }}
+                {% else %}
+                  {{ first.location.locality }}, {{ first.location.region }}, {{ first.location.countryCode }}
+                {% endif %}
+              </div>
+              <div class="w-full md:w-1/6">{{ last.startDate }}-{{ first.endDate }}</div>
+            </div>
+          </h4>
+
+          {% for job in jobs %}
+            <div class="p-experience h-event">
+              <div hidden class="p-name">{{ job.name }}</div>
+              <div hidden class="p-location h-card">
+                {% if job.location | isstring %}
+                  <span hidden class="p-location">{{ job.location }}</span>
+                {% else %}
+                  <span hidden class="p-location h-card">
+                    <span hidden class="p-locality">{{ job.location.locality }}</span>
+                    <span hidden class="p-region">{{ job.location.region }}</span>
+                    <span hidden class="p-country-name">{{ job.location.countryCode }}</span>
                   </span>
-                  {% endif %}
-                </span>
-                  <span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
-              </h4>
+                {% endif %}
+              </div>
+              <div hidden class="dt-start">{{ job.startDate }}</div>
+              <div hidden class="dt-end">{{ job.endDate }}</div>
+              <div class="p-summary">{{ job.position }}</div>
+              <div class="p-description">
+                <ul>
+                  {%- for highlight in job.highlights %}
+                    <li>{{ highlight }}</li>
+                  {%- endfor %}
+                  </ul>
+              </div>
             </div>
-            <div class="p-summary">{{ entry.position }}</div>
-            <div class="p-description">
-              <ul>
-                {%- for highlight in entry.highlights %}
-                  <li>{{ highlight }}</li>
-                {%- endfor %}
-                </ul>
-            </div>
-          </div>
-        {%- endfor %}
+          {% endfor %}
+        {% endfor %}
       </div>
     </div>
 
