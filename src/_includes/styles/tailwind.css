@@ -29,5 +29,8 @@
   .rsection-content {
     @apply rounded-md;
     @apply bg-slate-700;
+    @apply p-2;
+    @apply w-full;
+    @apply md:max-w-screen-md;
   }
 }
