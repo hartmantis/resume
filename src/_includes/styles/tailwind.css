@@ -14,19 +14,20 @@
 @layer components {
   .rsection {
     @apply flex;
-    @apply flex-row;
-    @apply sm:md:flex-col;
-    @apply rounded-md;
-    @apply bg-slate-700;
+    @apply flex-wrap;
+    @apply md:flex-nowrap;
     @apply m-4;
     @apply gap-2;
   }
 
   .rsection-header {
-
+    @apply w-full;
+    @apply md:w-28;
+    @apply flex-none;
   }
 
   .rsection-content {
-
+    @apply rounded-md;
+    @apply bg-slate-700;
   }
 }

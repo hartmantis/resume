@@ -47,7 +47,7 @@
       </div>
     </div>
   
-    <div id="summary" class="rsection flex-col sm:flex-row">
+    <div id="summary" class="rsection">
       <div class="rsection-header">
         <h2>Summary</h2>
       </div>
@@ -57,67 +57,79 @@
     </div>
 
     <div id="jobs" class="rsection">
-      <h2>Professional Experience</h2>
-      {%- for entry in config.work %}
-        <div class="p-experience h-event">
-          <div>
-            <h4>
-              <span class="p-name">{{ entry.name }}</span>
-              <span class="p-location h-card">
-                {%  if entry.location | isstring %}
-                <span class="p-location">{{ entry.location }}</span>
-                {% else %}
+      <div class="rsection-header">
+        <h2>Professional Experience</h2>
+      </div>
+      <div class="rsection-content">
+        {%- for entry in config.work %}
+          <div class="p-experience h-event">
+            <div>
+              <h4>
+                <span class="p-name">{{ entry.name }}</span>
                 <span class="p-location h-card">
-                  <span class="p-locality">{{ entry.location.locality }}</span>,
-                  <span class="p-region">{{ entry.location.region }}</span>,
-                  <span class="p-country-name">{{ entry.location.countryCode }}</span>
+                  {%  if entry.location | isstring %}
+                  <span class="p-location">{{ entry.location }}</span>
+                  {% else %}
+                  <span class="p-location h-card">
+                    <span class="p-locality">{{ entry.location.locality }}</span>,
+                    <span class="p-region">{{ entry.location.region }}</span>,
+                    <span class="p-country-name">{{ entry.location.countryCode }}</span>
+                  </span>
+                  {% endif %}
                 </span>
-                {% endif %}
-              </span>
-              <span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
-            </h4>
+                  <span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
+              </h4>
+            </div>
+            <div class="p-summary">{{ entry.position }}</div>
+            <div class="p-description">
+              <ul>
+                {%- for highlight in entry.highlights %}
+                  <li>{{ highlight }}</li>
+                {%- endfor %}
+                </ul>
+            </div>
           </div>
-          <div class="p-summary">{{ entry.position }}</div>
-          <div class="p-description">
-            <ul>
-              {%- for highlight in entry.highlights %}
-                <li>{{ highlight }}</li>
-              {%- endfor %}
-            </ul>
-          </div>
-        </div>
-      {%- endfor %}
+        {%- endfor %}
+      </div>
     </div>
 
     <div id="hobbies" class="rsection">
-      <h2>Hobbyist Experience</h2>
-      <ul>
-        {%- for entry in config.interests %}
-          <li class="p-skill">{{ entry.name }}</li>
-        {%- endfor %}
-      </ul>
+      <div class="rsection-header">
+        <h2>Hobbyist Experience</h2>
+      </div>
+      <div class="rsection-content">
+        <ul>
+          {%- for entry in config.interests %}
+            <li class="p-skill">{{ entry.name }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
     </div>
 
     <div id="education" class="rsection">
-      <h2>Educational Experience</h2>
-      {% for entry in config.education %}
-        <div class="p-education h-event">
-          <div>
-            <h4>
-              <span class="p-name">{{ entry.institution }}</span>
-              <span class="p-location h-card">
-                <span class="p-locality">{{ entry.location.locality }}</span>,
-                <span class="p-region">{{ entry.location.region }}</span>,
-                <span class="p-country-name">{{ entry.location.countryCode}}</span>
-              </span>
-              <span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
+      <div class="rsection-header">
+        <h2>Educational Experience</h2>
+      </div>
+      <div class="rsection-content">
+        {% for entry in config.education %}
+          <div class="p-education h-event">
+            <div>
+              <h4>
+                <span class="p-name">{{ entry.institution }}</span>
+                <span class="p-location h-card">
+                  <span class="p-locality">{{ entry.location.locality }}</span>,
+                  <span class="p-region">{{ entry.location.region }}</span>,
+                    <span class="p-country-name">{{ entry.location.countryCode}}</span>
+                </span>
+                <span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
+              </div>
+            </h4>
+            <div class="p-summary">
+              Coursework in: {{ entry.courses | join(", ") | capitalize }}
             </div>
-          </h4>
-          <div class="p-summary">
-            Coursework in: {{ entry.courses | join(", ") | capitalize }}
-          </div>
-        </div>
-      {% endfor %}
+            </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </body>
