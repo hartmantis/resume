@@ -97,7 +97,7 @@
               <div hidden class="dt-end">{{ job.endDate }}</div>
               <div class="p-summary">{{ job.position }}</div>
               <div class="p-description">
-                <ul>
+                <ul class="list-disc list-inside">
                   {%- for highlight in job.highlights %}
                     <li>{{ highlight }}</li>
                   {%- endfor %}
@@ -114,7 +114,7 @@
         <h2>Hobbyist Experience</h2>
       </div>
       <div class="rsection-content">
-        <ul>
+        <ul class="list-disc list-inside">
           {%- for entry in config.interests %}
             <li class="p-skill">{{ entry.name }}</li>
           {%- endfor %}
