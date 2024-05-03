@@ -32,6 +32,7 @@ module.exports = function(eleventyConfig) {
   let conf = yaml.load(fs.readFileSync("config/config.yml", "utf-8"));
 
   let iconmap = new Map();
+  iconmap.set("location", faSvgCore.findIconDefinition({ prefix: "fas", iconName: "map" }));
   iconmap.set("github", faSvgCore.findIconDefinition({ prefix: "fab", iconName: "github" }));
   iconmap.set("linkedin", faSvgCore.findIconDefinition({ prefix: "fab", iconName: "linkedin" }));
   iconmap.set("mastodon", faSvgCore.findIconDefinition({ prefix: "fab", iconName: "mastodon" }));
@@ -44,6 +45,14 @@ module.exports = function(eleventyConfig) {
     username: conf.basics.email,
     url: `mailto:${conf.basics.email}`
   });
+
+  conf.basics.location.icon = faSvgCore.icon(
+    iconmap.get("location"),
+    {
+      title: "My location",
+      transform: {size: 22 }
+    }
+  ).html;
 
   for ( profile of conf.basics.profiles ) {
     let lwr = profile.network.toLowerCase();

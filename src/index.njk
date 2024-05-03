@@ -30,14 +30,20 @@
           |
           <!-- The h-card microformat doesn't have a property for pronouns -->
           <span class="p-note">{{ config.basics.pronouns }}</span>
-          |
-          <span class="p-locality">{{ config.basics.location.city }}</span>,
-          <span class="p-region">{{ config.basics.location.region }}</span>,
-          <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
         </h1>
       </div>
 
       <div id="basics-contacts" class="flex flex-wrap p-2 gap-2 w-full md:max-w-screen-lg items-center justify-center">
+        <div class="flex-none w-60 rounded-md px-3 text-black text-center bg-purple-500 hover:bg-sky-700">
+          {{ config.basics.location.icon | safe }}
+          <a class="p-adr h-adr" href="https://www.openstreetmap.org/search?query={{ config.basics.location.city }}%2C%20{{ config.basics.location.region }}%2C%20{{ config.basics.location.countryCode }}">
+            <span class="p-locality">{{ config.basics.location.city }}</span>,
+            <span class="p-region">{{ config.basics.location.region }}</span>,
+            <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
+          </a>
+        </div>
+
+
         {%- for entry in config.basics.profiles %}
           <div class="flex-none w-60 rounded-md px-3 text-black text-center bg-purple-500 hover:bg-sky-700">
             {{ entry.icon | safe }}

@@ -27,7 +27,6 @@
     @apply text-left;
     @apply md:text-right;
   }
-
   
   .rsection-content {
     @apply rounded-md;
