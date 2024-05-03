@@ -101,7 +101,9 @@
               </div>
               <div hidden class="dt-start">{{ job.startDate }}</div>
               <div hidden class="dt-end">{{ job.endDate }}</div>
-              <div class="p-summary">{{ job.position }}</div>
+              <h5 class="text-sky-100">
+                <div class="p-summary">{{ job.position }}</div>
+              </h5>
               <div class="p-description">
                 <ul class="list-disc list-inside">
                   {%- for highlight in job.highlights %}
