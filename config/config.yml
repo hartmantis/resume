@@ -41,7 +41,7 @@ work:
         Built a self-healing compute cluster in AWS for an early-stage
         startup using Terraform, Packer, EC2, Lambda, Docker, Prometheus,
         Grafana Cloud, PagerDuty, and custom Python glue
-  - name: Tyler Technologies (formerly Socrata; acquired 2018)
+  - name: Tyler Technologies (née Socrata; acquired 2018)
     location:
       locality: Seattle
       region: WA
@@ -64,7 +64,7 @@ work:
         Maintained custom Ruby tooling around AWS CloudFormation and
         Hashicorp Packer to enable rapid, continuous deployment of new
         golden images
-  - name: Rackspace (formerly Webmail.us; acquired 2007)
+  - name: Rackspace (née Webmail.us; acquired 2007)
     location:
       locality: Blacksburg
       region: VA
@@ -78,7 +78,7 @@ work:
       - >
         Served as ultimate escalation point for issues with mail routing
         and anti-spam infrastructure
-  - name: Rackspace (formerly Webmail.us; acquired 2007)
+  - name: Rackspace (née Webmail.us; acquired 2007)
     location:
       locality: Blacksburg
       region: VA
@@ -90,7 +90,7 @@ work:
       - >
         Helped deploy a config management system (Chef) to automate setup
         of bare metal servers
-  - name: Rackspace (formerly Webmail.us; acquired 2007)
+  - name: Rackspace (née Webmail.us; acquired 2007)
     location:
       locality: Blacksburg
       region: VA
@@ -101,7 +101,7 @@ work:
     highlights:
       - >
         Evaluated, integrated, and maintained email anti-spam solutions
-  - name: Rackspace (formerly Webmail.us; acquired 2007)
+  - name: Rackspace (née Webmail.us; acquired 2007)
     location:
       locality: Blacksburg
       region: VA
@@ -116,7 +116,7 @@ work:
         geographically distributed
       - >
         Oversaw growth of operations from one engineer to seven
-  - name: Rackspace (formerly Webmail.us; acquired 2007)
+  - name: Rackspace (née Webmail.us; acquired 2007)
     location:
       locality: Blacksburg
       region: VA
