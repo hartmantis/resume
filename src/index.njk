@@ -99,10 +99,11 @@
                   </span>
                 {% endif %}
               </div>
-              <div hidden class="dt-start">{{ job.startDate }}</div>
-              <div hidden class="dt-end">{{ job.endDate }}</div>
               <h5 class="text-sky-100">
-                <div class="p-summary">{{ job.position }}</div>
+                <div>
+                  <span class="p-summary">{{ job.position }}</span>
+                  (<span class="dt-start">{{ job.startDate }}</span>-<span class="dt-end">{{ job.endDate }}</span>)
+                </div>
               </h5>
               <div class="p-description">
                 <ul class="list-disc list-inside">
