@@ -34,7 +34,7 @@
       </div>
 
       <div id="basics-contacts" class="flex flex-wrap p-2 gap-2 w-full md:max-w-screen-lg items-center justify-center">
-        <div class="flex-none w-60 rounded-md px-3 text-black text-center bg-purple-500 hover:bg-sky-700">
+        <div class="flex-none w-60 rounded-md px-3 text-black text-center transition ease-in-out delay-150 bg-purple-500 hover:bg-sky-700 hover:-translate-y-1 hover:scale-110">
           {{ config.basics.location.icon | safe }}
           <a class="p-adr h-adr" href="https://www.openstreetmap.org/search?query={{ config.basics.location.city }}%2C%20{{ config.basics.location.region }}%2C%20{{ config.basics.location.countryCode }}">
             <span class="p-locality">{{ config.basics.location.city }}</span>,
@@ -45,7 +45,7 @@
 
 
         {%- for entry in config.basics.profiles %}
-          <div class="flex-none w-60 rounded-md px-3 text-black text-center bg-purple-500 hover:bg-sky-700">
+          <div class="flex-none w-60 rounded-md px-3 text-black text-center transition ease-in-out delay-150 bg-purple-500 hover:bg-sky-700 hover:-translate-y-1 hover:scale-110">
             {{ entry.icon | safe }}
             <a class="p-contact h-card" href="{{ entry.url }}">{{ entry.username }}</a>
           </div>

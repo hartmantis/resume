@@ -29,8 +29,8 @@ The older versions of my web résumé have been mostly lost to time, but roughly
 ***Config***
 
 The project root directory contains a `config.yml` file defining our résumé
-data in a schema based on [JSON Resume](https://jsonresume.org/schema/), with
-some additions:
+data in a schema based on [this fork](https://github.com/AverageHelper/resume-schema)
+of JSON Résumé, with some additions:
 
 - A top-level `project_info` section to store the project URL and language
 - A `pronouns` field in the basics section
