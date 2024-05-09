@@ -35,4 +35,20 @@
     @apply w-full;
     @apply md:max-w-screen-md;
   }
+
+  .contact-link {
+    @apply flex-none;
+    @apply w-60;
+    @apply rounded-md;
+    @apply px-3;
+    @apply text-black;
+    @apply text-center;
+    @apply transition;
+    @apply ease-in-out;
+    @apply delay-150;
+    @apply bg-purple-500;
+    @apply hover:bg-sky-700;
+    @apply hover:-translate-y-1;
+    @apply hover:scale-110;
+  }
 }

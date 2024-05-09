@@ -28,28 +28,24 @@
         <h1>
           <span class="p-name">{{ config.basics.name }}</span>
           |
-          <!-- The h-card microformat doesn't have a property for pronouns -->
+          <!-- The h-card microformat doesn't have an official property for pronouns yet -->
           <a class="u-pronoun" href="https://pronouns.org/sharing">{{ config.basics.pronouns }}</a>
         </h1>
       </div>
 
-      <div id="basics-contacts" class="flex flex-wrap p-2 gap-2 w-full md:max-w-screen-lg items-center justify-center">
-        <div class="flex-none w-60 rounded-md px-3 text-black text-center transition ease-in-out delay-150 bg-purple-500 hover:bg-sky-700 hover:-translate-y-1 hover:scale-110">
-          <a class="p-adr h-adr" href="https://www.openstreetmap.org/search?query={{ config.basics.location.city }}%2C%20{{ config.basics.location.region }}%2C%20{{ config.basics.location.countryCode }}">
-            {{ config.basics.location.icon | safe }}
-            <span class="p-locality">{{ config.basics.location.city }}</span>,
-            <span class="p-region">{{ config.basics.location.region }}</span>,
-            <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
-          </a>
-        </div>
+      <div id="contacts" class="flex flex-wrap p-2 gap-2 w-full md:max-w-screen-lg justify-center">
+        <a class="p-adr h-adr contact-link" href="https://www.openstreetmap.org/search?query={{ config.basics.location.city }}%2C%20{{ config.basics.location.region }}%2C%20{{ config.basics.location.countryCode }}">
+          {{ config.basics.location.icon | safe }}
+          <span class="p-locality">{{ config.basics.location.city }}</span>,
+          <span class="p-region">{{ config.basics.location.region }}</span>,
+          <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
+        </a>
 
         {%- for entry in config.basics.profiles %}
-          <div class="flex-none w-60 rounded-md px-3 text-black text-center transition ease-in-out delay-150 bg-purple-500 hover:bg-sky-700 hover:-translate-y-1 hover:scale-110">
-            <a class="p-contact h-card" href="{{ entry.url }}">
-              {{ entry.icon | safe }}
-              {{ entry.username }}
-            </a>
-          </div>
+          <a class="p-contact h-card contact-link" href="{{ entry.url }}">
+            {{ entry.icon | safe }}
+            {{ entry.username }}
+          </a>
         {%- endfor %}
       </div>
     </div>
