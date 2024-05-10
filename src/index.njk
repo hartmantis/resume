@@ -25,29 +25,12 @@
   <div id="resume" class="h-resume">
     <div id="header" class="sticky top-0 w-full backdrop-blur">
       <div id="basics-intro" class="p-contact h-card p-2">
-        <h1>
-          <span class="p-name">{{ config.basics.name }}</span>
-          |
-          <!-- The h-card microformat doesn't have an official property for pronouns yet -->
-          <a class="u-pronoun" href="https://pronouns.org/sharing">{{ config.basics.pronouns }}</a>
-        </h1>
+        {% include "intro.njk" %}
       </div>
+    </div>
 
-      <div id="contacts" class="flex flex-wrap p-2 gap-2 w-full md:max-w-screen-lg justify-center">
-        <a class="p-adr h-adr contact-link" href="https://www.openstreetmap.org/search?query={{ config.basics.location.city }}%2C%20{{ config.basics.location.region }}%2C%20{{ config.basics.location.countryCode }}">
-          {{ config.basics.location.icon | safe }}
-          <span class="p-locality">{{ config.basics.location.city }}</span>,
-          <span class="p-region">{{ config.basics.location.region }}</span>,
-          <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
-        </a>
-
-        {%- for entry in config.basics.profiles %}
-          <a class="p-contact h-card contact-link" href="{{ entry.url }}">
-            {{ entry.icon | safe }}
-            {{ entry.username }}
-          </a>
-        {%- endfor %}
-      </div>
+    <div id="contacts" class="flex flex-wrap p-2 gap-2 w-full md:max-w-screen-lg justify-center">
+      {% include "contacts.njk" %}
     </div>
   
     <div id="summary" class="rsection">
@@ -55,7 +38,7 @@
         <h2>Summary</h2>
       </div>
       <div class="rsection-content">
-        <p class="p-summary">{{ config.basics.summary }}</p>
+        {% include "summary.njk" %}
       </div>
     </div>
 
@@ -64,54 +47,7 @@
         <h2>Professional Experience</h2>
       </div>
       <div class="rsection-content">
-        {% for org, jobs in config.work | groupby("name") %}
-          {% set first = jobs | first %}
-          {% set last = jobs | last %}
-
-          <h4 class="text-sky-400">
-            <div class="flex flex-wrap md:flex-nowrap">
-              <div class="w-full md:w-3/6">{{ first.name }}</div>
-              <div class="w-full md:w-2/6">
-                {% if first.location | isstring %}
-                  {{ first.location }}
-                {% else %}
-                  {{ first.location.locality }}, {{ first.location.region }}, {{ first.location.countryCode }}
-                {% endif %}
-              </div>
-              <div class="w-full md:w-1/6">{{ last.startDate }}-{{ first.endDate }}</div>
-            </div>
-          </h4>
-
-          {% for job in jobs %}
-            <div class="p-experience h-event">
-              <div hidden class="p-name">{{ job.name }}</div>
-              <div hidden class="p-location h-card">
-                {% if job.location | isstring %}
-                  <span hidden class="p-location">{{ job.location }}</span>
-                {% else %}
-                  <span hidden class="p-location h-card">
-                    <span hidden class="p-locality">{{ job.location.locality }}</span>
-                    <span hidden class="p-region">{{ job.location.region }}</span>
-                    <span hidden class="p-country-name">{{ job.location.countryCode }}</span>
-                  </span>
-                {% endif %}
-              </div>
-              <h5 class="text-sky-100">
-                <div>
-                  <span class="p-summary">{{ job.position }}</span>
-                  (<span class="dt-start">{{ job.startDate }}</span>-<span class="dt-end">{{ job.endDate }}</span>)
-                </div>
-              </h5>
-              <div class="p-description">
-                <ul class="list-disc list-inside">
-                  {%- for highlight in job.highlights %}
-                    <li>{{ highlight }}</li>
-                  {%- endfor %}
-                  </ul>
-              </div>
-            </div>
-          {% endfor %}
-        {% endfor %}
+        {% include "jobs.njk" %}
       </div>
     </div>
 
@@ -120,11 +56,7 @@
         <h2>Hobbyist Experience</h2>
       </div>
       <div class="rsection-content">
-        <ul class="list-disc list-inside">
-          {%- for entry in config.interests %}
-            <li class="p-skill">{{ entry.name }}</li>
-          {%- endfor %}
-        </ul>
+        {% include "hobbies.njk" %}
       </div>
     </div>
 
@@ -133,26 +65,7 @@
         <h2>Educational Experience</h2>
       </div>
       <div class="rsection-content">
-        {% for entry in config.education %}
-          <div class="p-education h-event">
-            <h4 class="text-sky-400">
-              <div class="flex flex-wrap md:flex-nowrap">
-                <div class="p-name w-full md:w-3/6">{{ entry.institution }}</div>
-                <div class="p-location h-card w-full md:w-2/6">
-                  <span class="p-locality">{{ entry.location.locality }}</span>,
-                  <span class="p-region">{{ entry.location.region }}</span>,
-                    <span class="p-country-name">{{ entry.location.countryCode}}</span>
-                </div>
-                <div class="w-full md:w-1/6">
-                  <span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
-                </div>
-              </div>
-            </h4>
-            <div class="p-summary">
-              Coursework in: {{ entry.courses | join(", ") | capitalize }}
-            </div>
-            </div>
-        {% endfor %}
+        {% include "education.njk" %}
       </div>
     </div>
   </div>
