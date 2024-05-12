@@ -1,7 +1,7 @@
 const fs = require("fs");
 const resumeSchema = require("@averagehelper/resume-schema");
 const yaml = require("js-yaml");
-const resume = yaml.load(fs.readFileSync("config/config.yml", "utf-8"));
+const resume = yaml.load(fs.readFileSync("config/data.yml", "utf-8"));
 
 const validate = async function() {
   try {

@@ -1,4 +1,4 @@
-{% for org, jobs in config.work | groupby("name") %}
+{% for org, jobs in resumeData.work | groupby("name") %}
   {% set first = jobs | first %}
   {% set last = jobs | last %}
 

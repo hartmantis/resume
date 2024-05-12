@@ -22,31 +22,42 @@ The older versions of my web résumé have been mostly lost to time, but roughly
   templates, Bootstrap styling, and FontAwesome icons
 - v4.0 - This repo!
 
+Feel free to fork this repo! But I wouldn't recommend it if you're trying to
+impress someone visually! All the configuration for a person's résumé data
+lives in the `config/config.yml` and `config/data.yml` files.
+
 ## Design
 
 ### Components
 
+***Tooling***
+
+I haven't gone full-on and made a full containerized service version of my
+résumé with an API back-end and web front-end (yet). This version uses:
+
+- [Eleventy](https://www.11ty.dev), after I poked around to see what people were
+  fans of in static site generators these days
+- [Tailwind CSS](https://tailwindcss.com) for styling, for a change of pace
+  (Bootstrap is still around and popular, but I used that last time)
+- [Font Awesome](https://fontawesome.com) for icons--it's the only package I
+  could find with icons for Bluesky and Mastodon
+
 ***Config***
 
-The project root directory contains a `config.yml` file defining our résumé
-data in a schema based on [this fork](https://github.com/AverageHelper/resume-schema)
-of JSON Résumé, with some additions:
+This project contains a `config` directory with two files in it:
 
-- A top-level `project_info` section to store the project URL and language
-- A `pronouns` field in the basics section
+- `config.yml` - Project-level information--currently just a URL and its base language
+- `data.yml` - All résumé data in accordance with [this fork](https://github.com/AverageHelper/resume-schema)
+  of the JSON Résumé schema (the maintainers of the base project have
+  repeatedly refused requests for the addition of a pronouns field)
+
+TODO: I also made these customizations that I need to resolve to get fully in
+spec:
+
 - Location information for work experience items
 - Location information for education items
 - Optionally allowing a location section to be a string instead of hash for
   cases where there is no locality/region/country (i.e. remote work)
-
-***Content***
-
-The Eleventy version of this project uses Nunjucks as its templating language.
-
-***Styling***
-
-We use TailwindCSS for styling. This is a simple site that could use either
-that or Bootstrap, but I've used Bootstrap before so am trying something new.
 
 ## Credits
 

@@ -28,7 +28,8 @@ module.exports = function(eleventyConfig) {
     return typeof obj === "string";
   });
 
-  let conf = yaml.load(fs.readFileSync("config/config.yml", "utf-8"));
+  let resumeConfig = yaml.load(fs.readFileSync("config/config.yml", "utf-8"));
+  let resumeData = yaml.load(fs.readFileSync("config/data.yml", "utf-8"));
 
   let iconmap = new Map();
   iconmap.set("location", faSvgCore.findIconDefinition({ prefix: "fas", iconName: "map" }));
@@ -39,13 +40,13 @@ module.exports = function(eleventyConfig) {
   iconmap.set("email", faSvgCore.findIconDefinition({ prefix: "fas", iconName: "envelope" }));
   iconmap.set("phone", faSvgCore.findIconDefinition({ prefix: "fas", iconName: "phone" }));
 
-  conf.basics.profiles.unshift({
+  resumeData.basics.profiles.unshift({
     network: "email",
-    username: conf.basics.email,
-    url: `mailto:${conf.basics.email}`
+    username: resumeData.basics.email,
+    url: `mailto:${resumeData.basics.email}`
   });
 
-  conf.basics.location.icon = faSvgCore.icon(
+  resumeData.basics.location.icon = faSvgCore.icon(
     iconmap.get("location"),
     {
       title: "My location",
@@ -53,7 +54,7 @@ module.exports = function(eleventyConfig) {
     }
   ).html;
 
-  for ( profile of conf.basics.profiles ) {
+  for ( profile of resumeData.basics.profiles ) {
     let lwr = profile.network.toLowerCase();
     let icon = iconmap.get(lwr);
     profile.icon = faSvgCore.icon(
@@ -65,7 +66,8 @@ module.exports = function(eleventyConfig) {
     ).html;
   }
   
-  eleventyConfig.addGlobalData("config", conf);
+  eleventyConfig.addGlobalData("resumeConfig", resumeConfig);
+  eleventyConfig.addGlobalData("resumeData", resumeData);
 
   eleventyConfig.addPassthroughCopy({ "config/favicons/*" : "/" });
 

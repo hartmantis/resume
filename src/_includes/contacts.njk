@@ -1,11 +1,11 @@
-<a class="p-adr h-adr contact-link" href="https://www.openstreetmap.org/search?query={{ config.basics.location.city }}%2C%20{{ config.basics.location.region }}%2C%20{{ config.basics.location.countryCode }}">
-  {{ config.basics.location.icon | safe }}
-  <span class="p-locality">{{ config.basics.location.city }}</span>,
-  <span class="p-region">{{ config.basics.location.region }}</span>,
+<a class="p-adr h-adr contact-link" href="https://www.openstreetmap.org/search?query={{ resumeData.basics.location.city }}%2C%20{{ resumeData.basics.location.region }}%2C%20{{ resumeData.basics.location.countryCode }}">
+  {{ resumeData.basics.location.icon | safe }}
+  <span class="p-locality">{{ resumeData.basics.location.city }}</span>,
+  <span class="p-region">{{ resumeData.basics.location.region }}</span>,
   <span class="p-country-name">{{ config.basics.location.countryCode }}</span>
 </a>
 
-{%- for entry in config.basics.profiles %}
+{%- for entry in resumeData.basics.profiles %}
   <a class="p-contact h-card contact-link" href="{{ entry.url }}">
     {{ entry.icon | safe }}
     {{ entry.username }}
