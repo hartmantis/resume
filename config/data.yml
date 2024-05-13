@@ -30,8 +30,8 @@ work:
   - name: Texas Mining Company
     location: Remote
     position: Principal Engineer
-    startDate: 2021
-    endDate: 2023
+    startDate: "2021"
+    endDate: "2023"
     highlights:
       -  >
         Built a self-healing compute cluster in AWS for an early-stage
@@ -43,8 +43,8 @@ work:
       region: WA
       countryCode: US
     position: Senior Site Reliability Engineer
-    startDate: 2015
-    endDate: 2019
+    startDate: "2015"
+    endDate: "2019"
     highlights:
       - >
         Owned cross-team services for the open data division, including:
@@ -66,8 +66,8 @@ work:
       region: VA
       countryCode: US
     position: Technical Lead, Mail Routing
-    startDate: 2012
-    endDate: 2014
+    startDate: "2012"
+    endDate: "2014"
     highlights:
       - >
         Led adoption of test-driven infrastructure practices
@@ -80,8 +80,8 @@ work:
       region: VA
       countryCode: US
     position: Linux Systems Engineer III
-    startDate: 2011
-    endDate: 2012
+    startDate: "2011"
+    endDate: "2012"
     highlights:
       - >
         Helped deploy a config management system (Chef) to automate setup
@@ -92,8 +92,8 @@ work:
       region: VA
       countryCode: US
     position: Anti-Abuse Engineer
-    startDate: 2009
-    endDate: 2011
+    startDate: "2009"
+    endDate: "2011"
     highlights:
       - >
         Evaluated, integrated, and maintained email anti-spam solutions
@@ -103,8 +103,8 @@ work:
       region: VA
       countryCode: US
     position: Engineering Team Lead
-    startDate: 2007
-    endDate: 2009
+    startDate: "2007"
+    endDate: "2009"
     highlights:
       - >
         Led operations team responsible for scaling out a colo environment
@@ -118,8 +118,8 @@ work:
       region: VA
       countryCode: US
     position: Customer Support Engineer
-    startDate: 2005
-    endDate: 2007
+    startDate: "2005"
+    endDate: "2007"
     highlights:
       - >
         Served as the sole operations engineer and primary escalation point
@@ -140,8 +140,8 @@ education:
       locality: Fairfax
       region: VA
       countryCode: US
-    startDate: 2001
-    endDate: 2005
+    startDate: "2001"
+    endDate: "2005"
     courses:
       - philosophy
       - computer science
@@ -151,8 +151,8 @@ education:
       locality: Amherst
       region: MA
       countryCode: US
-    startDate: 2000
-    endDate: 2001
+    startDate: "2000"
+    endDate: "2001"
     courses:
       - computer science
       - political science
