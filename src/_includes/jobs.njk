@@ -1,53 +1,53 @@
 {% for org, jobs in resumeData.work | groupby("name") %}
-  {% set first = jobs | first %}
-  {% set last = jobs | last %}
+	{% set first = jobs | first %}
+	{% set last = jobs | last %}
 
-  <h4 class="text-sky-400">
-    <div class="flex flex-wrap md:flex-nowrap">
-      <div class="w-full md:w-3/6">{{ first.name }}</div>
+	<h4 class="text-sky-400">
+		<div class="flex flex-wrap md:flex-nowrap">
+			<div class="w-full md:w-3/6">{{ first.name }}</div>
 
-      <div class="w-full md:w-2/6">
-        {% if first.location | isstring %}
-          {{ first.location }}
-        {% else %}
-          {{ first.location.locality }}, {{ first.location.region }}, {{ first.location.countryCode }}
-        {% endif %}
-      </div>
+			<div class="w-full md:w-2/6">
+				{% if first.location | isstring %}
+					{{ first.location }}
+				{% else %}
+					{{ first.location.locality }}, {{ first.location.region }}, {{ first.location.countryCode }}
+				{% endif %}
+			</div>
 
-      <div class="w-full md:w-1/6">{{ last.startDate }}-{{ first.endDate }}</div>
-    </div>
-  </h4>
+			<div class="w-full md:w-1/6">{{ last.startDate }}-{{ first.endDate }}</div>
+		</div>
+	</h4>
 
-  {% for job in jobs %}
-    <div class="p-experience h-event">
-      <div hidden class="p-name">{{ job.name }}</div>
+	{% for job in jobs %}
+		<div class="p-experience h-event">
+			<div hidden class="p-name">{{ job.name }}</div>
 
-      <div hidden class="p-location h-card">
-        {% if job.location | isstring %}
-          <span hidden class="p-location">{{ job.location }}</span>
-        {% else %}
-          <span hidden class="p-location h-card">
-          <span hidden class="p-locality">{{ job.location.locality }}</span>
-          <span hidden class="p-region">{{ job.location.region }}</span>
-          <span hidden class="p-country-name">{{ job.location.countryCode }}</span>
-          </span>
-        {% endif %}
-      </div>
+			<div hidden class="p-location h-card">
+				{% if job.location | isstring %}
+					<span hidden class="p-location">{{ job.location }}</span>
+				{% else %}
+					<span hidden class="p-location h-card">
+					<span hidden class="p-locality">{{ job.location.locality }}</span>
+					<span hidden class="p-region">{{ job.location.region }}</span>
+					<span hidden class="p-country-name">{{ job.location.countryCode }}</span>
+					</span>
+				{% endif %}
+			</div>
 
-      <h5 class="text-sky-100">
-        <div>
-          <span class="p-summary">{{ job.position }}</span>
-          (<span class="dt-start">{{ job.startDate }}</span>-<span class="dt-end">{{ job.endDate }}</span>)
-        </div>
-      </h5>
+			<h5 class="text-sky-100">
+				<div>
+					<span class="p-summary">{{ job.position }}</span>
+					(<span class="dt-start">{{ job.startDate }}</span>-<span class="dt-end">{{ job.endDate }}</span>)
+				</div>
+			</h5>
 
-      <div class="p-description">
-        <ul class="list-disc list-inside">
-          {%- for highlight in job.highlights %}
-            <li>{{ highlight }}</li>
-        {%- endfor %}
-        </ul>
-      </div>
-    </div>
-  {% endfor %}
+			<div class="p-description">
+				<ul class="list-disc list-inside">
+					{%- for highlight in job.highlights %}
+						<li>{{ highlight }}</li>
+				{%- endfor %}
+				</ul>
+			</div>
+		</div>
+	{% endfor %}
 {% endfor %}

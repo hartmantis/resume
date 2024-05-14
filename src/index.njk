@@ -1,73 +1,73 @@
 <!DOCTYPE html>
 <html lang="{{ config.project_info.lang }}"
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" href="/favicon.ico" sizes="48x48" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/manifest.json" />
+	<link rel="icon" href="/favicon.ico" sizes="48x48" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/manifest.json" />
 
-  <title>Résumé for {{ config.basics.name }}</title>
+	<title>Résumé for {{ config.basics.name }}</title>
 
-  <style>
-    {% set css %}
-    {% include "styles/tailwind.css" %}
-    {% include "../node_modules/@fortawesome/fontawesome-svg-core/styles.css" %}
-    {% endset %}
-    {{ css | postCss | safe }}
-  </style>
+	<style>
+		{% set css %}
+		{% include "styles/tailwind.css" %}
+		{% include "../node_modules/@fortawesome/fontawesome-svg-core/styles.css" %}
+		{% endset %}
+		{{ css | postCss | safe }}
+	</style>
 </head>
 
 <body class="bg-white text-slate-500 dark:bg-slate-900 dark:text-slate-400">
-  <div id="resume" class="h-resume">
-    <div id="header" class="sticky top-0 w-full backdrop-blur">
-      <div id="basics-intro" class="p-contact h-card p-2">
-        {% include "intro.njk" %}
-      </div>
-    </div>
+	<div id="resume" class="h-resume">
+		<div id="header" class="sticky top-0 w-full backdrop-blur">
+			<div id="basics-intro" class="p-contact h-card p-2">
+				{% include "intro.njk" %}
+			</div>
+		</div>
 
-    <div id="contacts" class="flex flex-wrap p-2 gap-2 w-full md:max-w-screen-lg justify-center">
-      {% include "contacts.njk" %}
-    </div>
-  
-    <div id="summary" class="rsection">
-      <div class="rsection-header">
-        <h2>Summary</h2>
-      </div>
-      <div class="rsection-content">
-        {% include "summary.njk" %}
-      </div>
-    </div>
+		<div id="contacts" class="flex flex-wrap p-2 gap-2 w-full md:max-w-screen-lg justify-center">
+			{% include "contacts.njk" %}
+		</div>
+	
+		<div id="summary" class="rsection">
+			<div class="rsection-header">
+				<h2>Summary</h2>
+			</div>
+			<div class="rsection-content">
+				{% include "summary.njk" %}
+			</div>
+		</div>
 
-    <div id="jobs" class="rsection">
-      <div class="rsection-header">
-        <h2>Professional Experience</h2>
-      </div>
-      <div class="rsection-content">
-        {% include "jobs.njk" %}
-      </div>
-    </div>
+		<div id="jobs" class="rsection">
+			<div class="rsection-header">
+				<h2>Professional Experience</h2>
+			</div>
+			<div class="rsection-content">
+				{% include "jobs.njk" %}
+			</div>
+		</div>
 
-    <div id="hobbies" class="rsection">
-      <div class="rsection-header">
-        <h2>Hobbyist Experience</h2>
-      </div>
-      <div class="rsection-content">
-        {% include "hobbies.njk" %}
-      </div>
-    </div>
+		<div id="hobbies" class="rsection">
+			<div class="rsection-header">
+				<h2>Hobbyist Experience</h2>
+			</div>
+			<div class="rsection-content">
+				{% include "hobbies.njk" %}
+			</div>
+		</div>
 
-    <div id="education" class="rsection">
-      <div class="rsection-header">
-        <h2>Educational Experience</h2>
-      </div>
-      <div class="rsection-content">
-        {% include "education.njk" %}
-      </div>
-    </div>
-  </div>
+		<div id="education" class="rsection">
+			<div class="rsection-header">
+				<h2>Educational Experience</h2>
+			</div>
+			<div class="rsection-content">
+				{% include "education.njk" %}
+			</div>
+		</div>
+	</div>
 </body>
 </html>

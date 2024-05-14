@@ -1,23 +1,23 @@
 {% for entry in resumeData.education %}
-  <div class="p-education h-event">
-    <h4 class="text-sky-400">
-      <div class="flex flex-wrap md:flex-nowrap">
-        <div class="p-name w-full md:w-3/6">{{ entry.institution }}</div>
+	<div class="p-education h-event">
+		<h4 class="text-sky-400">
+			<div class="flex flex-wrap md:flex-nowrap">
+				<div class="p-name w-full md:w-3/6">{{ entry.institution }}</div>
 
-        <div class="p-location h-card w-full md:w-2/6">
-          <span class="p-locality">{{ entry.location.locality }}</span>,
-          <span class="p-region">{{ entry.location.region }}</span>,
-          <span class="p-country-name">{{ entry.location.countryCode}}</span>
-        </div>
+				<div class="p-location h-card w-full md:w-2/6">
+					<span class="p-locality">{{ entry.location.locality }}</span>,
+					<span class="p-region">{{ entry.location.region }}</span>,
+					<span class="p-country-name">{{ entry.location.countryCode}}</span>
+				</div>
 
-        <div class="w-full md:w-1/6">
-          <span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
-        </div>
-      </div>
-    </h4>
+				<div class="w-full md:w-1/6">
+					<span class="dt-start">{{ entry.startDate }}</span>-<span class="dt-end">{{ entry.endDate }}</span>
+				</div>
+			</div>
+		</h4>
 
-    <div class="p-summary">
-      Coursework in: {{ entry.courses | join(", ") | capitalize }}
-    </div>
-  </div>
+		<div class="p-summary">
+			Coursework in: {{ entry.courses | join(", ") | capitalize }}
+		</div>
+	</div>
 {% endfor %}
