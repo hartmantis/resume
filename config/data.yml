@@ -38,10 +38,7 @@ work:
         startup using Terraform, Packer, EC2, Lambda, Docker, Prometheus,
         Grafana Cloud, PagerDuty, and custom Python glue
   - name: Tyler Technologies (née Socrata; acquired 2018)
-    location:
-      locality: Seattle
-      region: WA
-      countryCode: US
+    location: Seattle, WA, US
     position: Senior Site Reliability Engineer
     startDate: "2015"
     endDate: "2019"
@@ -61,10 +58,7 @@ work:
         Hashicorp Packer to enable rapid, continuous deployment of new
         golden images
   - name: Rackspace (née Webmail.us; acquired 2007)
-    location:
-      locality: Blacksburg
-      region: VA
-      countryCode: US
+    location: Blacksburg, VA, US
     position: Technical Lead, Mail Routing
     startDate: "2012"
     endDate: "2014"
@@ -75,10 +69,7 @@ work:
         Served as ultimate escalation point for issues with mail routing
         and anti-spam infrastructure
   - name: Rackspace (née Webmail.us; acquired 2007)
-    location:
-      locality: Blacksburg
-      region: VA
-      countryCode: US
+    location: Blacksburg, VA, US
     position: Linux Systems Engineer III
     startDate: "2011"
     endDate: "2012"
@@ -87,10 +78,7 @@ work:
         Helped deploy a config management system (Chef) to automate setup
         of bare metal servers
   - name: Rackspace (née Webmail.us; acquired 2007)
-    location:
-      locality: Blacksburg
-      region: VA
-      countryCode: US
+    location: Blacksburg, VA, US
     position: Anti-Abuse Engineer
     startDate: "2009"
     endDate: "2011"
@@ -98,10 +86,7 @@ work:
       - >
         Evaluated, integrated, and maintained email anti-spam solutions
   - name: Rackspace (née Webmail.us; acquired 2007)
-    location:
-      locality: Blacksburg
-      region: VA
-      countryCode: US
+    location: Blacksburg, VA, US
     position: Engineering Team Lead
     startDate: "2007"
     endDate: "2009"
@@ -113,10 +98,7 @@ work:
       - >
         Oversaw growth of operations from one engineer to seven
   - name: Rackspace (née Webmail.us; acquired 2007)
-    location:
-      locality: Blacksburg
-      region: VA
-      countryCode: US
+    location: Blacksburg, VA, US
     position: Customer Support Engineer
     startDate: "2005"
     endDate: "2007"
@@ -136,10 +118,7 @@ interests:
       Live streaming with a focus on audio tech and virtual music performance
 education:
   - institution: George Mason University
-    location:
-      locality: Fairfax
-      region: VA
-      countryCode: US
+    location: Fairfax, VA, US
     startDate: "2001"
     endDate: "2005"
     courses:
@@ -147,10 +126,7 @@ education:
       - computer science
       - women and gender studies
   - institution: Hampshire College
-    location:
-      locality: Amherst
-      region: MA
-      countryCode: US
+    location: Amherst, MA, US
     startDate: "2000"
     endDate: "2001"
     courses:
