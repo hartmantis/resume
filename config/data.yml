@@ -1,0 +1,134 @@
+basics:
+  name: Jonathan Hartman
+  pronouns: he/they
+  email: j@hartman.io
+  location:
+    city: Seattle
+    region: WA
+    countryCode: US
+  profiles:
+    - network: LinkedIn
+      username: hartmantis
+      url: https://www.linkedin.com/in/hartmantis/
+    - network: GitHub
+      username: hartmantis
+      url: https://github.com/hartmantis
+    - network: Mastodon
+      username: "@cheese@hachyderm.io"
+      url: https://hachyderm.io/@cheese
+    - network: Bluesky
+      username: "@h.gripe"
+      url: https://bsky.app/profile/h.gripe
+  summary: >
+    Infrastructure engineer with a passion for automation, continuous
+    everything, and the democratization of the ability to run bigger
+    apps more reliably at greater scale. Enjoyer of troubleshooting complex
+    problems and experienced carrier of the pager. Practitioner of HugOps.
+    Not a web designer (obviously).
+
+work:
+  - name: Texas Mining Company
+    location: Remote
+    position: Principal Engineer
+    startDate: "2021"
+    endDate: "2023"
+    highlights:
+      -  >
+        Built a self-healing compute cluster in AWS for an early-stage
+        startup using Terraform, Packer, EC2, Lambda, Docker, Prometheus,
+        Grafana Cloud, PagerDuty, and custom Python glue
+  - name: Tyler Technologies (née Socrata; acquired 2018)
+    location: Seattle, WA, US
+    position: Senior Site Reliability Engineer
+    startDate: "2015"
+    endDate: "2019"
+    highlights:
+      - >
+        Owned cross-team services for the open data division, including:
+        config management (Chef), HTTP routing (Nginx), container
+        orchestration (Mesos), service discovery (Consul), monitoring
+        (Sensu), metrics (Collectd, Statsd, Graphite), firewalls
+        (AWS, Palo Alto), identity management (Okta), and VPNs (OpenVPN)
+      - >
+        Worked across all product teams and other stakeholders to design and
+        build a FedRAMP-certified AWS environment and undertake a migration
+        of dozens of services to the cloud
+      - >
+        Maintained custom Ruby tooling around AWS CloudFormation and
+        Hashicorp Packer to enable rapid, continuous deployment of new
+        golden images
+  - name: Rackspace (née Webmail.us; acquired 2007)
+    location: Blacksburg, VA, US
+    position: Technical Lead, Mail Routing
+    startDate: "2012"
+    endDate: "2014"
+    highlights:
+      - >
+        Led adoption of test-driven infrastructure practices
+      - >
+        Served as ultimate escalation point for issues with mail routing
+        and anti-spam infrastructure
+  - name: Rackspace (née Webmail.us; acquired 2007)
+    location: Blacksburg, VA, US
+    position: Linux Systems Engineer III
+    startDate: "2011"
+    endDate: "2012"
+    highlights:
+      - >
+        Helped deploy a config management system (Chef) to automate setup
+        of bare metal servers
+  - name: Rackspace (née Webmail.us; acquired 2007)
+    location: Blacksburg, VA, US
+    position: Anti-Abuse Engineer
+    startDate: "2009"
+    endDate: "2011"
+    highlights:
+      - >
+        Evaluated, integrated, and maintained email anti-spam solutions
+  - name: Rackspace (née Webmail.us; acquired 2007)
+    location: Blacksburg, VA, US
+    position: Engineering Team Lead
+    startDate: "2007"
+    endDate: "2009"
+    highlights:
+      - >
+        Led operations team responsible for scaling out a colo environment
+        from several servers in one datacenter to several hundred
+        geographically distributed
+      - >
+        Oversaw growth of operations from one engineer to seven
+  - name: Rackspace (née Webmail.us; acquired 2007)
+    location: Blacksburg, VA, US
+    position: Customer Support Engineer
+    startDate: "2005"
+    endDate: "2007"
+    highlights:
+      - >
+        Served as the sole operations engineer and primary escalation point
+        for customer support
+      - >
+        Worked with CTO and System Architect to automate server provisioning
+interests:
+  - name: >
+      Learning enough NixOS/Nix, ZFS, and Traefik to build a new home NAS on them
+  - name: >
+      Creating increasingly overengineered web versions of this résumé for fun
+      and front-end experience
+  - name: >
+      Live streaming with a focus on audio tech and virtual music performance
+education:
+  - institution: George Mason University
+    location: Fairfax, VA, US
+    startDate: "2001"
+    endDate: "2005"
+    courses:
+      - philosophy
+      - computer science
+      - women and gender studies
+  - institution: Hampshire College
+    location: Amherst, MA, US
+    startDate: "2000"
+    endDate: "2001"
+    courses:
+      - computer science
+      - political science
