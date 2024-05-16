@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"test": "node test/validate_json_resume_schema.js",
 		"build": "eleventy",
 		"start": "eleventy --serve"
 	},
