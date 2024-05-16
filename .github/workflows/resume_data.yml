@@ -1,0 +1,21 @@
+name: Validate résumé data
+
+on:
+  pull_request:
+    paths:
+      - 'config/data.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'config/data.yml'
+  schedule:
+    - cron: 0 19 * * 2
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses actions/setup-node@v4
+      - run: node test/validate_json_resume_schema.js
